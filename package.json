@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ]
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.26.0",
     "next": "13.4.6",

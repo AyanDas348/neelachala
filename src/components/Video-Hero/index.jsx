@@ -32,7 +32,7 @@ const VideoHero = ({ header_text, header_video, header, header_thumbnail, header
       className="bg-img valign"
       style={{
         position: "relative",
-        backgroundImage: `url('${header_images.data[index]?.attributes.url}')`,
+        backgroundImage: `url('${header_images?.data[index]?.attributes.url}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         transition: "background-image 1s ease-in-out",

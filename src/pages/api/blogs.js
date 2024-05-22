@@ -8,7 +8,7 @@ export default async function getAllBlogs() {
                 "Authorization": `bearer ${process.env.NEXT_PUBLIC_CMS_API_TOKEN}`,
             },
         });
-        console.log('response', response)
+        ('response', response)
         if (response.status) {
             const data = await response.json();
             return data;

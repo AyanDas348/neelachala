@@ -29,11 +29,8 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
         body: JSON.stringify({ name, phone, email, message, apartment, flat }),
       });
 
-      console.log(response)
-
       if (response.ok) {
         const data = await response.json();
-        console.log(data)
         setShowMessage(true);
         setName('');
         setPhone('');
@@ -61,7 +58,7 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
         <div className="col-lg-6 map-box">
           <iframe
             style={{
-              filter: "grayscale(100%)",
+              // filter: "grayscale(100%)",
             }}
             src={iframeLink}></iframe>
         </div>
@@ -104,9 +101,9 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
                 />
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "15px" }} className="form-group">
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "15px" }} className="form-group">
                 {
-                  [1, 2, 3, 3.5, 4, 5].map((item, idx) => {
+                  [2, 3, 4, 5].map((item, idx) => {
                     return <div key={idx}>
                       <button className={`btn-curve ${flat === item ? 'btn-color': ''}`} type="button" onClick={() => setFlat(item)} id={`bhk${item}`}
                       >

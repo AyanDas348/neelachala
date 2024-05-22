@@ -6,6 +6,7 @@ import LightLayout from "../../layouts/light";
 import Testimonials from "../Testimonials1";
 import Contact from "../Contact";
 import WorkTwoColumn from "../Work-Two-Column";
+import WorkFourColumn from "../Work-Four-Column";
 import PromotionPopup from "../Promotion-Popup";
 import SkillsCircle from "../Skills-Circle";
 
@@ -13,7 +14,6 @@ const Home1 = ({ projects, data, footerData }) => {
   React.useEffect(() => {
     document.querySelector("body").classList.add("homepage");
   }, []);
-  console.log(data)
   const { header_video, header, banner, header_thumbnail, header_images } = data.data?.attributes ?? {}
 
   return (

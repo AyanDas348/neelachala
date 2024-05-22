@@ -28,7 +28,6 @@ const BlogsList = ({ blogs }) => {
                     content,
                     title, slug
                   } = item.attributes
-                  console.log(slug)
                   const image = item.attributes.post_image.data.attributes.url
                   const first = content.split(' ').slice(0, 20).join(' ')
                   return (

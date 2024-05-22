@@ -11,7 +11,6 @@ export default function Home({ projects, data, footerData }) {
 // getServersideProps
 export const getStaticProps = async () => {
   const [projects, data, footerData] = await Promise.all([getAllProjects(), getHomePageData(), getFooterData()])
-  console.log('x', projects, data, footerData)
   return {
     props: {
       projects,

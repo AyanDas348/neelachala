@@ -5,12 +5,12 @@ const SkillsCircle = ({ amenities }) => {
     <section className="skills-circle section-padding pt-0">
       <div className="row wow fadeInUp" data-wow-delay=".3s">
         {amenities.map((feature) => (
-          <div className="col-lg-4 col-md-6 col-sm-6" style={{marginBottom: "20px"}} key={feature.id}>
+          <div className="col-lg-4 col-md-6 col-sm-6" style={{ marginBottom: "20px" }} key={feature.id}>
             <div className="skill-icon mt-10">
-              <img src={`/assets/img/amenities/${feature.id}.png`} alt="icon" />
+              <img src={feature.amenity_icon.data[0].attributes.url} alt="icon" />
             </div>
             <div className="skill-content">
-              <h5>{feature.title}</h5>
+              <h5>{feature.amenity_name}</h5>
             </div>
           </div>
         ))}

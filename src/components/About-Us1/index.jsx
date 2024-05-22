@@ -1,7 +1,6 @@
 import React from "react";
 
 const AboutUs1 = ({ data }) => {
-  console.log('data', data)
   const {
     about_us_title,
     about_us_content,

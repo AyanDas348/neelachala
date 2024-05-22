@@ -11,8 +11,6 @@ const BlogDetails = ({ allBlogs, footerData }) => {
 
   const blog = blogs?.find(blog => blog.attributes.slug === router.query.slug)
 
-  console.log(blog)
-
   React.useEffect(() => {
     document.querySelector('body').classList.add('index3')
   }, [])

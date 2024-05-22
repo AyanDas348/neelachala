@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainLayout from "../../layouts/main";
 import PageHeader from "../../components/Page-header";
 import ProjectIntro from "../../components/Project-Intro";
@@ -34,22 +34,17 @@ const ProjectDetails = ({ projects, footerData }) => {
     security,
     map,
     location,
-    map_iframe
+    map_iframe,
+    custom_amenity,
+    amenity_number
   } = project?.attributes ?? {};
 
-  console.log(map);
-  console.log(footerData)
-  console.log(name)
-  // const { map_iframe } = footerData.data.attributes;
+  const [amenities, setAmenities] = useState([]);
 
-  const amenities = [];
-  if (cctv) amenities.push({ id: "cctv", title: "CCTV" });
-  if (elevator) amenities.push({ id: "elevator", title: "Elevator" });
-  if (parking) amenities.push({ id: "parking", title: "Parking" });
-  if (play_area) amenities.push({ id: "play_area", title: "Play Area" });
-  if (rcc_structure)
-    amenities.push({ id: "rcc_structure", title: "RCC Structure" });
-  if (security) amenities.push({ id: "security", title: "Security" });
+  useEffect(() => {
+    const priority = custom_amenity.slice(0, (amenity_number || 6))
+    setAmenities(priority)
+  }, [amenity_number, custom_amenity])
 
   React.useEffect(() => {
     document.querySelector("body").classList.add("index3");
@@ -57,7 +52,7 @@ const ProjectDetails = ({ projects, footerData }) => {
 
   return (
     <MainLayout data={footerData}>
-      <PageHeader title={name} image={main_photo?.data?.attributes?.url} />
+      <PageHeader title={name} image={main_photo?.data?.attributes?.url} location={location} />
       <ProjectIntro
         description={description}
         details={{
@@ -69,10 +64,6 @@ const ProjectDetails = ({ projects, footerData }) => {
         }}
       />
       <Amenities amenities={amenities} />
-      <section className="contact">
-        <ContactInfo data={footerData.data.attributes} />
-        <ContactWithMap iframeLink={map_iframe} apartment={name} />
-      </section>
       {photos?.data?.length && (
         <section className="projdtal">
           <div className="justified-gallery">
@@ -111,6 +102,10 @@ const ProjectDetails = ({ projects, footerData }) => {
           </div>
         </section>
       )}
+      <section className="contact">
+        {/* <ContactInfo data={footerData.data.attributes} /> */}
+        <ContactWithMap iframeLink={map_iframe} apartment={name} />
+      </section>
     </MainLayout>
   );
 };

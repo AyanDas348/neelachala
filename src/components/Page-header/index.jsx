@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const PageHeader = ({ title, fullPath, image }) => {
+const PageHeader = ({ title, fullPath, image, location }) => {
   const router = useRouter();
+  console.log(fullPath)
   return (
     <header
       className="pages-header bg-img valign parallaxie"
@@ -22,6 +23,20 @@ const PageHeader = ({ title, fullPath, image }) => {
           <div className="col-lg-12">
             <div className="cont text-center playfont">
               <h1>{title}</h1>
+              <div>
+                <h3 style={{
+                  // justifyContent: "end",
+                  // display: "flex",
+                  // '@media (max-width: 768px)': {
+                  //   justifyContent: "center",
+                  //   textAlign: "center",
+                  //   display: "flex"
+                  // }
+                }}>
+                  {location}
+                </h3>
+              </div>
+
               <div className="path">
                 {fullPath?.length &&
                   fullPath?.map((item, index) => (

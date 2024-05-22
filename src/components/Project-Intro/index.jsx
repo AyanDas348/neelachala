@@ -4,57 +4,22 @@ import Link from "next/link";
 const ProjectIntro = ({ description, details }) => {
   const { flatType, constructionArea, numberOfFlats, map, location } =
     details ?? {};
-    console.log(details)
 
   return (
     <section className="intro-section section-padding pb-80">
       <div className="container">
         <div className="row">
-          <div className="col-lg-9 col-md-9 mb-30">
+          <div className="col-md-11 mb-85">
             <div className="htit">
               <h4>Introduction</h4>
             </div>
-            <div className="text">
+            <div className="text" style={{textAlign: "justify"}}>
               <p>{description}</p>
             </div>
           </div>
-          {map && (
-            <div className="col-lg-3 col-md-3">
-              <div className="cont">
-                <div className="htit">
-                  <h4>Location</h4>
-                </div>
-                <a href={map} target="_blank">
-                  <p
-                    className="text"
-                    style={{
-                      fontSize: "1.2rem",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {location.toUpperCase()}
-                  </p>
-                </a>
-              </div>
-              <button
-                className="btn-curve btn-color mt-20"
-                style={{
-                  color: "#fff",
-                }}
-                onClick={() => {
-                  window.open(map, "_blank");
-                }}
-              >
-                <span>
-                  <i className="fa fa-location-arrow" aria-hidden="true"></i>{" "}
-                  Get Direction
-                </span>
-              </button>
-            </div>
-          )}
         </div>
         <div className="numbers">
-          <div className="row">
+          <div className="row mb-65">
             {flatType && (
               <div className="col-sm-4">
                 <div className="item mb-10">

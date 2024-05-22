@@ -25,42 +25,16 @@ const AboutUs4 = ({ data }) => {
                     <h6>Satisfied Clients</h6>
                   </div>
                 </div>
-                {/* <div className="col-sm-6">
-                  <div className="item">
-                    <h3>
-                      <span className="nbr playfont">656</span>
-                      <i>M</i>
-                    </h3>
-                    <h6>Monthly Revenue</h6>
-                  </div>
-                </div> */}
-                {/* <div className="col-sm-6">
-                  <div className="item">
-                    <h3>
-                      <span className="nbr playfont">{data.awards}</span>
-                    </h3>
-                    <h6>Awards Won</h6>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
           <div className="col-lg-6">
             <div className="txt-cont">
-              <p className="mb-20 mt-40">
+              <p className="mb-20 mt-40" style={{textAlign: "justify"}}>
                 {data.content}
               </p>
             </div>
           </div>
-          {/* <div className="col-lg-12">
-            <div className="txt-cont">
-              <p className="mb-20 mt-40">
-                {
-                  data.content.split('\n')[1]
-                }
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

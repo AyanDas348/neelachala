@@ -35,15 +35,22 @@ const Services3 = ({ bigTitle, grid, services }) => {
               <div
                 className="item-bx bg-img wow fadeInUp"
                 data-wow-delay={index == 0 ? ".3s" : index == 1 ? ".5s" : ".7s"}
+                style={{ display: "grid", gridRow: "3", rowGap: "10px" }}
               >
-                <LazyLoadImage src={service.creative.data.attributes.url} alt="" />
-                <h6 className="mb-20 mt-20">{service.title}</h6>
-                <p>{service.description}</p>
-                <Link href="/contact">
-                  <div className={`more ${!grid ? "custom-font" : ""} mt-30`}>
-                    Request Quotation
-                  </div>
-                </Link>
+                <div>
+                  <LazyLoadImage src={service.creative.data.attributes.url} alt="" />
+                </div>
+                <div>
+                  <h6 className="mb-20 mt-20">{service.title}</h6>
+                  <p>{service.description}</p>
+                </div>
+                <div>
+                  <Link href="/contact">
+                    <div className={`more ${!grid ? "custom-font" : ""} mt-30`}>
+                      Request Quotation
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

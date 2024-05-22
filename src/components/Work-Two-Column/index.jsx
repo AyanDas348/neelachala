@@ -15,6 +15,8 @@ const WorkTwoColumn = ({ projects }) => {
     }, 1000);
   }, []);
 
+  const newProjectLayout = [...projects?.filter((project) => project.attributes.project_status !== 'completed')].slice(0,8)
+
   return (
     <>
       <section className="works section-padding">
@@ -31,12 +33,11 @@ const WorkTwoColumn = ({ projects }) => {
               </div>
             </div>
           </div>
-          <div className="row mt-10 d-block d-sm-none">
+          {/* <div className="row mt-10 d-block d-sm-none">
             <div className="col-lg-12">
               <Slider
                 className="our-works"
                 {...{
-                  // ref: (c) => (this.slider = c),
                   dots: false,
                   arrows: true,
                   autoplay: true,
@@ -89,13 +90,12 @@ const WorkTwoColumn = ({ projects }) => {
                   </Link>
                 ))}
               </Slider>
-              {/* {renderArrows()} */}
             </div>
-          </div>
+          </div> */}
           <div className="row gallery
             d-none d-sm-block
           ">
-            {projects?.map((project, index) => (
+            {newProjectLayout?.map((project, index) => (
               <div className="col-lg-6 items" key={index}>
                 <Link
                   legacyBehavior

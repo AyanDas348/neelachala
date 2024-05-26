@@ -15,7 +15,14 @@ const WorkTwoColumn = ({ projects }) => {
     }, 1000);
   }, []);
 
-  const newProjectLayout = [...projects?.filter((project) => project.attributes.project_status !== 'completed')].slice(0,8)
+  let newProjectLayout = []
+
+  if (projects?.filter((project) => project.attributes.project_status !== 'completed').length % 2 === 0) {
+    newProjectLayout = [...projects?.filter((project) => project.attributes.project_status !== 'completed')]
+  } else {
+    newProjectLayout = [...projects?.filter((project) => project.attributes.project_status !== 'completed'), ...projects?.filter((project) => project.attributes.project_status === 'completed').slice(0, 1)]
+  }
+
 
   return (
     <>
@@ -33,65 +40,6 @@ const WorkTwoColumn = ({ projects }) => {
               </div>
             </div>
           </div>
-          {/* <div className="row mt-10 d-block d-sm-none">
-            <div className="col-lg-12">
-              <Slider
-                className="our-works"
-                {...{
-                  dots: false,
-                  arrows: true,
-                  autoplay: true,
-                  rows: 1,
-                  slidesToScroll: 1,
-                  slidesToShow: 2,
-                  responsive: [
-                    {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 2,
-                      },
-                    },
-                    {
-                      breakpoint: 767,
-                      settings: {
-                        slidesToShow: 1,
-                      },
-                    },
-                    {
-                      breakpoint: 480,
-                      settings: {
-                        slidesToShow: 1,
-                      },
-                    },
-                  ],
-                }}
-              >
-                {projects.map((project, index) => (
-                  <Link
-                    key={index}
-                    legacyBehavior
-                    href={`/project-details?name=${project.attributes?.name
-                      ?.replace(/\s+/g, "_")
-                      .toLowerCase()}`}
-                  >
-                    <div className="item">
-                      <div className="img">
-                        <LazyLoadImage
-                          src={
-                            project?.attributes?.main_photo?.data?.attributes?.url
-                          }
-                          alt={project?.attributes?.name}
-                        />
-                      </div>
-                      <div className="cont vis">
-                        <h5>{project?.attributes?.name}</h5>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </Slider>
-            </div>
-          </div> */}
           <div className="row gallery
             d-none d-sm-block
           ">
@@ -111,6 +59,11 @@ const WorkTwoColumn = ({ projects }) => {
                           project?.attributes?.main_photo?.data?.attributes?.url
                         }
                         alt={project?.attributes?.name}
+                        style={{
+                          width: "100%",
+                          objectFit: "cover",
+                          aspectRatio: "1/1",
+                        }}
                       />
                     </div>
                     <div className="cont vis">

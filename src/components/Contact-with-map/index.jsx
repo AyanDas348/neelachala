@@ -62,9 +62,9 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
             }}
             src={iframeLink}></iframe>
         </div>
-        <div className="col-lg-6 form">
+        <div className="col-lg-6 form" style={{ padding: "30px"}}>
+        <h3 className="messages playfont">Are you interested? Contact us for more details</h3>
           <form id="contact-form" method="post">
-            <div className="messages"></div>
 
             <div className="controls">
               <div className="form-group">

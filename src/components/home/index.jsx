@@ -9,17 +9,19 @@ import WorkTwoColumn from "../Work-Two-Column";
 import WorkFourColumn from "../Work-Four-Column";
 import PromotionPopup from "../Promotion-Popup";
 import SkillsCircle from "../Skills-Circle";
+import VideoHeroMobile from "../Video-Hero-Mobile";
 
 const Home1 = ({ projects, data, footerData }) => {
   React.useEffect(() => {
     document.querySelector("body").classList.add("homepage");
   }, []);
-  const { header_video, header, banner, header_thumbnail, header_images } = data.data?.attributes ?? {}
+  const { header_video, header, banner, header_thumbnail, header_images, mobile_header_images } = data.data?.attributes ?? {}
 
   return (
     <LightLayout
       footerClass={"mt-30"} footerData={footerData}>
-      <VideoHero header_video={header_video} header={header} header_thumbnail={header_thumbnail} header_images={header_images}/>
+      <VideoHero header_video={header_video} header={header} header_thumbnail={header_thumbnail} header_images={header_images} />
+      <VideoHeroMobile header={header} header_thumbnail={header_thumbnail} header_images={header_images} />
       <AboutUs1 data={data?.data?.attributes} />
       <SkillsCircle banner={banner} showLearnMore />
       <WorkTwoColumn projects={projects?.data} />

@@ -6,7 +6,7 @@ const ProjectIntro = ({ description, details }) => {
     details ?? {};
 
   return (
-    <section className="intro-section section-padding pb-80">
+    <section className="intro-section section-padding pb-25">
       <div className="container">
         <div className="row">
           <div className="col-md-11 mb-85">

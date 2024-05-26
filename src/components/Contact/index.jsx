@@ -127,7 +127,7 @@ const Contact = ({ footerData }) => {
         <div className="contact-map">
           {footerData.map_iframe && <iframe
             style={{
-              filter: "grayscale(100%)",
+              // filter: "grayscale(100%)",
             }}
             src={footerData.map_iframe}></iframe>}
         </div>

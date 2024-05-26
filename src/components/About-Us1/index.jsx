@@ -51,12 +51,12 @@ const AboutUs1 = ({ data }) => {
               <p>{about_us_content}</p>
               <div className="numbers mt-50">
                 <div className="row">
-                  <div className="col-md-4">
+                  <div className="col-md-6">
                     <div className="item">
                       <h3>
-                        <span className="nbr playfont">{flats_completed}</span>
+                        <span className="nbr playfont">&nbsp;{flats_completed}</span>
                       </h3>
-                      <h6>FLATS COMPLETED</h6>
+                      <h6>&nbsp; &nbsp;SQUARE FEET CONSTRUCTED </h6>
                     </div>
                   </div>
 

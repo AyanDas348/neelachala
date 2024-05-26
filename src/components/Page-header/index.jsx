@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 const PageHeader = ({ title, fullPath, image, location }) => {
   const router = useRouter();
-  console.log(fullPath)
   return (
     <header
       className="pages-header bg-img valign parallaxie"

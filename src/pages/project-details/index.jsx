@@ -42,7 +42,6 @@ const ProjectDetails = ({ projects, footerData }) => {
     qr,
     oreraLink,
   } = project?.attributes ?? {};
-  console.log(project)
 
   const [amenities, setAmenities] = useState([]);
 
@@ -55,6 +54,8 @@ const ProjectDetails = ({ projects, footerData }) => {
   React.useEffect(() => {
     document.querySelector("body").classList.add("index3");
   }, []);
+
+  console.log(project?.attributes)
 
   return (
     <MainLayout data={footerData}>
@@ -121,11 +122,11 @@ const ProjectDetails = ({ projects, footerData }) => {
               </div>
             </div>
             <div className="col-lg-6 orera-box" style={{ wordWrap: "break-word", textAlign: "justify", padding: "10px" }}>
-              <h5 style={{ textAlign: "justify", lineHeight: "20px"}}>Explore our curated links to the Odisha Real Estate Regulatory Authority (ORERA) resources. Stay informed about the latest regulations, project registrations, and updates in the real estate sector. These links provide access to essential information, ensuring transparency and protecting your interests as a homebuyer or real estate professional in Odisha.
+              <h5 style={{ textAlign: "justify", lineHeight: "20px" }}>Explore our curated links to the Odisha Real Estate Regulatory Authority (ORERA) resources. Stay informed about the latest regulations, project registrations, and updates in the real estate sector. These links provide access to essential information, ensuring transparency and protecting your interests as a homebuyer or real estate professional in Odisha.
               </h5>
-              <h5 style={{textAlign: "left"}}>ORERA resource for {" "}
-                <Link href={oreraLink}>
-                  <u>{name}</u>
+              <h5 style={{ textAlign: "left" }}>ORERA resource for {" "}
+                <Link href={oreraLink || '/'} target="_blank" rel="noopener noreferrer">
+                    <u>{name}</u>
                 </Link>
               </h5>
             </div>

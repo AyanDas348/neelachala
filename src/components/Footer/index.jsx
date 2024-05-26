@@ -77,7 +77,7 @@ const Footer = ({ classText, data }) => {
             <div className="item">
               <div className="logo">
                 <img
-                  src="https://res.cloudinary.com/dagjy96pi/image/upload/v1702183497/favicon_589e3a78b2.png"
+                  src="https://res.cloudinary.com/dagjy96pi/image/upload/v1702183483/logo_horizontal_4ad3068563.png"
                   alt="logo"
                   style={{
                   width: "80px",

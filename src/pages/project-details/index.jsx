@@ -109,7 +109,7 @@ const ProjectDetails = ({ projects, footerData }) => {
           </div>
         </section>
       )}
-      <section className="pb-40 skills-circle">
+      <section className="pb-75 skills-circle" style={{ display: `${project?.attributes.project_status !== 'ongoing' ? 'none' : 'block'}` }}>
         <div className="container-fluid">
           <div className="row" style={{ display: "flex", justifyContent: "space-evenly" }}>
             <div className="col-lg-6 qr-box">
@@ -126,7 +126,7 @@ const ProjectDetails = ({ projects, footerData }) => {
               </h5>
               <h5 style={{ textAlign: "left" }}>ORERA resource for {" "}
                 <Link href={oreraLink || '/'} target="_blank" rel="noopener noreferrer">
-                    <u>{name}</u>
+                  <u>{name}</u>
                 </Link>
               </h5>
             </div>

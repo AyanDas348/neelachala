@@ -62,8 +62,8 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
             }}
             src={iframeLink}></iframe>
         </div>
-        <div className="col-lg-6 form" style={{ padding: "30px"}}>
-        <h3 className="messages playfont">Are you interested? Contact us for more details</h3>
+        <div className="col-lg-6 form" style={{ padding: "30px" }}>
+          <h3 className="messages playfont pb-35">Are you interested? Contact us for more details</h3>
           <form id="contact-form" method="post">
 
             <div className="controls">
@@ -101,11 +101,11 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
                 />
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "15px" }} className="form-group">
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "15px" }} className="form-group">
                 {
-                  [2, 3, 4, 5].map((item, idx) => {
+                  [1, 2, 3, 3.5, 4, 4.5].map((item, idx) => {
                     return <div key={idx}>
-                      <button className={`btn-curve ${flat === item ? 'btn-color': ''}`} type="button" onClick={() => setFlat(item)} id={`bhk${item}`}
+                      <button className={`btn-curve ${flat === item ? 'btn-color' : ''}`} type="button" onClick={() => setFlat(item)} id={`bhk${item}`}
                       >
                         <span
                           style={{

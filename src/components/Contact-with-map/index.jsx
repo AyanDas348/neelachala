@@ -23,6 +23,18 @@ const ContactWithMap = ({ iframeLink, apartment }) => {
         email,
         message
       })
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        setEmailError('Please enter a valid email address.');
+        return;
+      }
+
+      // Validate phone number
+      const phoneRegex = /^(?:\+91)?\d{10}$/;
+      if (!phoneRegex.test(phone)) {
+        setPhoneError('Please enter a valid 10-digit phone number.');
+        return;
+      }
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { "Content-Type": "application/json", Accept: "application/json" },

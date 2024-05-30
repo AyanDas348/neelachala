@@ -47,10 +47,10 @@ const Footer = ({ classText, data }) => {
                   <span className="icon pe-7s-mail"></span>
                   <div className="cont">
                     <h6>Email Us</h6>
-                    <a href={`mailto:${info_email}`}>
+                    {/* <a href={`mailto:${info_email}`}>
                       <p>{shortener(info_email, 30)}</p>
-                    </a>
-                    <br />
+                    </a> */}
+                    {/* <br /> */}
                     <a href={`mailto:${bussiness_enquire_email}`}>
                       <p>{shortener(bussiness_enquire_email, 30)}</p>
                     </a>
